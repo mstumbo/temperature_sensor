@@ -59,3 +59,7 @@ sudo npm install -g homebridge-httpmultisensor
 launchctl stop com.homebridge.server
 launchctl start com.homebridge.server
 ```
+4. To checkup on the homebridge process
+```sh
+grep homebridge /var/log/system.log
+```
