@@ -10,6 +10,7 @@ This project uses an MCP3008 with a TMP36 to measure the temperature. The temper
 ## Raspberry Pi Server on Boot Setup
 1. Clone the repository
 2. Create a temp_server systemctl service
+   * `sudo nano /lib/systemd/system/temp_server.service`  
 
 ```
 [Unit]
