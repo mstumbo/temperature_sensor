@@ -1,6 +1,8 @@
 # Temperature Sensor
 This project uses an MCP3008 with a TMP36 to measure the temperature. The temperature is available over HTTP get requests.
 
+See http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf for mcp 3008 data sheet
+
 ## Building the temperature sensor
 
 ## Raspberry Pi Hardware Configuration
@@ -56,11 +58,14 @@ sudo npm install -g homebridge-httpmultisensor
    "manufacturer" : "",
    "model": "Raspberry Pi tmp36",
    "serial": "<name>",
-   "url": "http://<raspbery_pi_hostname>.local",
+   "url": "http://<raspberry_pi_hostname>.local/<sensor_pin>",
    "http_method": "GET",
    "debug": true  
 }
 ```
+   * <raspberry_pi_hostname> is the hostname 
+   * <sensor_pin> is the sensor pin number, integer between 0 and 7
+
 3. Restart the homebridge process
 
 ```sh
