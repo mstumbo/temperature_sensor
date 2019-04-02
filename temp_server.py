@@ -3,7 +3,11 @@ import time
 import readadc
 import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
+import argparse
 
+parser = argparse.ArgumentParser(description='Simple tmp36 temperature sensor server.')
+parser.add_argument("--port", "-p", dest="port", type=int, default=80, help='Port number to start the server on')  
+args = parser.parse_args()
 
 # temperature sensor middle pin connected channel 0 of mcp3008
 sensor_pin = 0
@@ -38,6 +42,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(str.encode('{"value": %s}'%read_tmp36()))
 
-httpd = HTTPServer(('0.0.0.0', 80), SimpleHTTPRequestHandler)
+httpd = HTTPServer(('0.0.0.0', args.port), SimpleHTTPRequestHandler)
 httpd.serve_forever()
 
