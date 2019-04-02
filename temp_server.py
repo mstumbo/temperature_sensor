@@ -9,12 +9,11 @@ parser = argparse.ArgumentParser(description='Simple tmp36 temperature sensor se
 parser.add_argument("--port", "-p", dest="port", type=int, default=80, help='Port number to start the server on')  
 args = parser.parse_args()
 
-# temperature sensor middle pin connected channel 0 of mcp3008
-sensor_pin = 0
+# see http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf for mcp 3008 data sheet
 readadc.initialize()
 
 #the main sensor reading and plotting loop
-def read_tmp36():
+def read_tmp36(sensor_pin):
     sensor_data = readadc.readadc(sensor_pin,
                                   readadc.PINS.SPICLK,
                                   readadc.PINS.SPIMOSI,
@@ -38,9 +37,17 @@ def read_tmp36():
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
+        # ignore favicon
+        if "favicon" in self.requestline:
+            return
+        try:
+            sensor_pin = int(self.requestline.split()[1].split("/")[1])
+            response = '{"value": %s}'%read_tmp36(sensor_pin)
+        except ValueError: 
+            response = "You must provide a sensor pin."
         self.send_response(200)
         self.end_headers()
-        self.wfile.write(str.encode('{"value": %s}'%read_tmp36()))
+        self.wfile.write(str.encode(response))
 
 httpd = HTTPServer(('0.0.0.0', args.port), SimpleHTTPRequestHandler)
 httpd.serve_forever()
