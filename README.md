@@ -11,61 +11,17 @@ See http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf for mcp 3008 data
 
 #### Assembly List
 
-<table>
+| Label | Part Type | Properties |
+| :- | :- | :- |
+| ADC1 | MCP3008 | variant variant 1; bit resolution 10; package dil16; sampling rate 200 ksps max. sampling rate at V DD = 5V/75 ksps max. sampling rate at V DD = 2.7V; interface SPI; chip MCP3008; channels 8 | 
+| Raspberry Pi | Raspberry Pi 3 | variant Raspberry Pi 3; revision RPI-3-V1.2; processor Broadcom BCM2837 64-bit ARMv8; part # RPI-3-V1.2 |
+| T1 | TMP36 Temperature Sensor | variant TMP36; package TO92 [THT]; type solid state | 
 
-<thead>
-
-<tr>
-
-<th>Label</th>
-
-<th>Part Type</th>
-
-<th>Properties</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>ADC1</td>
-
-<td>MCP3008</td>
-
-<td class="props">variant variant 1; bit resolution 10; package dil16; sampling rate 200 ksps max. sampling rate at V DD = 5V/75 ksps max. sampling rate at V DD = 2.7V; interface SPI; chip MCP3008; channels 8</td>
-
-</tr>
-
-<tr>
-
-<td>Raspberry Pi 1</td>
-
-<td>Raspberry Pi 3</td>
-
-<td class="props">variant Raspberry Pi 3; revision RPI-3-V1.2; processor Broadcom BCM2837 64-bit ARMv8; part # RPI-3-V1.2</td>
-
-</tr>
-
-<tr>
-
-<td>T1</td>
-
-<td>TMP36 Temperature Sensor</td>
-
-<td class="props">variant TMP36; package TO92 [THT]; type solid state</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
+ * Note any Raspberry Pi will do. Recommended RPis: 3B, 3A, Zero W.
 
 ## Raspberry Pi Software
 * Install the necessary software:
+
 ```sh
 pip install -r requirements.txt
 ```
