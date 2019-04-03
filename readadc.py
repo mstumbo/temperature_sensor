@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
-# change these as desired - they're the pins connected from the
-# SPI port on the ADC to the GPIO Pins on the Raspi
+# Modified from Ploty's readadc.py
+# https://github.com/plotly/raspberrypi/blob/master/readadc.py
 
 # MCP3008 to Raspi (PiCobbler) Pin connections
 class PINS:
@@ -19,7 +19,7 @@ def initialize():
     GPIO.setup(PINS.SPICS, GPIO.OUT)
 
 
-# Function to read data from Analog Pin 0 from MCP3008 (don't need to edit)
+# Function to read data from Analog Pins from MCP3008 (don't need to edit)
 # This function will be called in our loop to get the current sensor value
 def readadc(adcnum, clockpin, mosipin, misopin, cspin):
     if ((adcnum > 7) or (adcnum < 0)):
