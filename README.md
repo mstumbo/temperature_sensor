@@ -12,7 +12,7 @@ See http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf for mcp 3008 data
 #### Assembly List
 
 | Label | Part Type | Properties |
-| :- | :- | :- |
+| :-- | :-- | :-- |
 | ADC1 | MCP3008 | variant variant 1; bit resolution 10; package dil16; sampling rate 200 ksps max. sampling rate at V DD = 5V/75 ksps max. sampling rate at V DD = 2.7V; interface SPI; chip MCP3008; channels 8 | 
 | Raspberry Pi | Raspberry Pi 3 | variant Raspberry Pi 3; revision RPI-3-V1.2; processor Broadcom BCM2837 64-bit ARMv8; part # RPI-3-V1.2 |
 | T1 | TMP36 Temperature Sensor | variant TMP36; package TO92 [THT]; type solid state | 
