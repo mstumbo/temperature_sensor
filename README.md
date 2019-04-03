@@ -3,11 +3,14 @@ This project uses an MCP3008 with a TMP36 to measure the temperature. The temper
 
 See http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf for mcp 3008 data sheet
 
-## Building the temperature sensor
-
 ## Raspberry Pi Hardware Configuration
+<img src="./docs/Temperatur Sensor.svg">
 
 ## Raspberry Pi Software
+1. Install the necessary software:
+```sh
+pip install -r requirements.txt
+```
 
 ## Raspberry Pi Server on Boot Setup
 1. Clone the repository
@@ -20,7 +23,7 @@ Description=HTTP Server that reads tmp36 on GET
 After=multi-user.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/mstumbo/temperature_sensor/temp_server.py
+ExecStart=/usr/bin/python3 <path_to_server>temperature_sensor/temp_server.py
 
 [Install]
 WantedBy=multi-user.target
@@ -37,6 +40,14 @@ sudo systemctl start temp_server
 ```sh
 sudo systemctl status temp_server
 journalctl -u temp_server.service
+```
+5. To restart the service
+```sh
+sudo systemctl stop temp_server
+sudo systemctl disable temp_server.service
+sudo systemctl daemon-reload
+sudo systemctl enable temp_server.service
+sudo systemctl start temp_server
 ```
 
 ## Homebridge Setup
