@@ -63,60 +63,6 @@ See http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf for mcp 3008 data
 
 </table>
 
-#### Shopping List
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Amount</th>
-
-<th>Part Type</th>
-
-<th>Properties</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>1</td>
-
-<td>MCP3008</td>
-
-<td class="props">variant variant 1; bit resolution 10; package dil16; sampling rate 200 ksps max. sampling rate at V DD = 5V/75 ksps max. sampling rate at V DD = 2.7V; interface SPI; chip MCP3008; channels 8</td>
-
-</tr>
-
-<tr>
-
-<td>1</td>
-
-<td>Raspberry Pi 3</td>
-
-<td class="props">variant Raspberry Pi 3; revision RPI-3-V1.2; processor Broadcom BCM2837 64-bit ARMv8; part # RPI-3-V1.2</td>
-
-</tr>
-
-<tr>
-
-<td>1</td>
-
-<td>TMP36 Temperature Sensor</td>
-
-<td class="props">variant TMP36; package TO92 [THT]; type solid state</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
 
 ## Raspberry Pi Software
 * Install the necessary software:
