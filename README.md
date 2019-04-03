@@ -91,8 +91,8 @@ sudo npm install -g homebridge-httpmultisensor
    "debug": true  
 }
 ```
-   * <raspberry_pi_hostname> is the hostname 
-   * <sensor_pin> is the sensor pin number, integer between 0 and 7
+   * _\<raspberry_pi_hostname\>_ is the hostname 
+   * _\<sensor_pin\>_ is the sensor pin number, integer between 0 and 7
 
 * Restart the homebridge process
 
