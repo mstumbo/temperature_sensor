@@ -4,7 +4,7 @@ This project uses an MCP3008 with a TMP36 to measure the temperature. The temper
 See http://ww1.microchip.com/downloads/en/DeviceDoc/21295d.pdf for mcp 3008 data sheet
 
 ## Raspberry Pi Hardware Configuration
-<img src="./docs/Temperatur Sensor.svg">
+![](./docs/temperature_sensor.png)
 
 ## Raspberry Pi Software
 1. Install the necessary software:
