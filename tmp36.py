@@ -3,6 +3,8 @@ import time
 import readadc
 import datetime
 
+# Used to test the temperature sensor on the command line. 
+# Usage: python3 tmp36.py
 
 # temperature sensor middle pin connected channel 0 of mcp3008
 sensor_pin = 0
@@ -17,7 +19,7 @@ while True:
                                   readadc.PINS.SPICS)
 
     millivolts = sensor_data * (3300.0 / 1024.0)
-    print(millivolts)
+    print("millivolts: {millivolts}")
     # 10 mv per degree
     temp_C = ((millivolts - 100.0) / 10.0) - 40.0
     # convert celsius to fahrenheit
@@ -29,8 +31,8 @@ while True:
     temp_F = "%.1f" % temp_F
 
     # write the data to plotly
-    print(temp_F)
-    print(temp_C)
+    print(f"temp in F: {temp_F}")
+    print(f"temp in C: {temp_C}")
     print()
     # delay between stream posts
     time.sleep(0.25)
