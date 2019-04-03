@@ -93,6 +93,7 @@ sudo npm install -g homebridge-httpmultisensor
 ```
    * _\<raspberry\_pi\_hostname\>_ is the hostname 
    * _\<sensor\_pin\>_ is the sensor pin number, integer between 0 and 7
+      * The breadboard drawing shows the temperature sensor using MCP3008 sensor pin 0.
 
 * Restart the homebridge process
 
